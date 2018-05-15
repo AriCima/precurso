@@ -1,55 +1,6 @@
-
-//  FUNCIONA EN EL TERMINAL Y NO EN EL CHROME ?????
-
-/*
 function bingo(){
 
-    //var nombre = window.prompt('Ingresa tu nombre', 'nombre');
-
-    var carton = [[],[],[]];
-    for (fil=0; fil<=2; fil++){
-        for(col=0; col<=4; col++){
-            carton[fil][col] = Math.round(Math.random()*100);
-        };
-    };
-    console.log(carton);
-    
-    var iteraciones = 0;
-    var cont = 0;
-    
-    while (cont<15) {
-
-        var newBall = Math.round(Math.random()*100);
-        iteraciones = iteraciones + 1;
-      
-        for (fil=0; fil<=2; fil++){        
-
-            for (col=0; col<=4; col++){         
-
-                if (newBall === carton[fil][col]) {   
-                    carton[fil][col] = 'X';
-                    cont = cont+1;
-                    console.log(carton);
-                };
-
-            };
-            
-        };
-    };  
-  
-    console.log('Las iteraciones necesarias fueron: ' + iteraciones);
-};
-
-bingo();
-
-
-*/
-
-//  FUNCIONA EN TERMINAL
-
-function bingo(){
-
-    //var nombre = window.prompt('Ingresa tu nombre', 'nombre');
+   //var nombre = window.prompt('Ingresa tu nombre', 'nombre');    //para probar en el TERMINAL comentar ésta línea
 
 
     //Genero cartón
@@ -59,6 +10,9 @@ function bingo(){
             carton[fil][col] = Math.round(Math.random()*100);
         };
     };
+
+    console.log('Tu cartón es: ')
+    console.log('');
     console.log(carton);
     
     var iteraciones = 0;
@@ -83,10 +37,9 @@ function bingo(){
                     console.log(carton);
                     
                     if (linea[fil] === 5) {
-                        cont = 15;     // salida del While para preguntar si se desea continuar  NO FUNCIONA!
                         console.log('Felicitaciones tu fila nro ' + (fil+1) + ' está completa!');
                     };
-                };
+                }
 
                 
 
@@ -94,8 +47,10 @@ function bingo(){
             
         };
     };  
-  
-    console.log('Las iteraciones necesarias fueron: ' + iteraciones);
+    
+    console.log('');
+    console.log('Has necesitado ' + iteraciones + ' itereaciones para completar tu cartón.');
+    console.log('');
 };
 
 bingo();

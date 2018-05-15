@@ -16,6 +16,7 @@ function info(flights) {
     alert ('Bienvenido ' + name.toUpperCase() + ' !');
     var costo = 0;
     var escalasTotales = 0;
+    console.log('A CONTINUACION VERÁS LA INFORMACIÓN DE NUESTROS VUELOS:')
     for ( i=0; i<flights.length; i++) {
         if (flights[i].scale){
             var escala = 'realiza una escala.';
@@ -43,9 +44,9 @@ function info(flights) {
 
 function modify(flights){
     var userType = window.prompt('Eres admin o usuario?', 'admin o user');
-        if (userType === 'admin') {
+        if (userType === 'admin' || userType ==='Admin' || userType === 'ADMIN') {
             var action = window.prompt('Elije qué operación deseas realizar', '"Crear" o "Eliminar" vuelos');
-            if (action === 'Crear') {
+            if (action === 'Crear' || action === 'Crear') {
                 var newID = window.prompt('Ingrese el ID del vuelo', 'ej 10');
                 var newTo = window.prompt('Ingrese el DESTINO del vuelo', 'Destino');
                 var newFrom = window.prompt('Ingrese el ORIGEN del vuelo', 'Origen') 
@@ -61,12 +62,12 @@ function modify(flights){
                 flights.push({ID: newID, to: newTo, from: newFrom, cost: newCost, scale: newScale});
                 console.log('');
                 console.log('El el nuevo vuelo parte de ' + flights[(flights.length)-1].from + ' hacia ' + flights[(flights.length)-1].to + ', con un costo de ' + flights[(flights.length)-1].cost + '€ y ' + escalaInfo);
-            } else if (action === 'Eliminar' || 'eliminar' || 'ELIMINAR'){
+            } else if (action === 'Eliminar' || action === 'eliminar' || action === 'ELIMINAR'){
                 alert ('EN CONSTRUCCION');
             } else {
-                alert ('PARAÁMETRO NO VÁLIDO, INTÉNTALO MAS TARDE');
+                alert ('PARAÁMETRO NO VÁLIDO, INTÉNTALO MAS TARDE');    // cómo puedo volver a la línea 48 ???
             };
-        } else if (action === 'user' || 'USER' || 'usuario' || 'user' || 'USER' || 'User') {
+        } else if (action === 'user' || action === 'USER' || action === 'User' || action === 'usuario' || action === 'Usuario' || action === 'USUARIO'  ) {
             alert ('EN CONSTRUCCIÓN');
         } else {
             alert ('NO ERES USER NI ADMIN');
